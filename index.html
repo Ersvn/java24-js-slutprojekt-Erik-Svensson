@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Filmer</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<header class="wrap">
+  <h1>Filmer</h1>
+
+  <!-- Navbar -->
+  <div class="row">
+    <button id="homeBtn" type="button">Hem</button>
+    <button id="topRatedBtn" type="button">Top rated (10)</button>
+    <button id="popularBtn" type="button">Popular (10)</button>
+  </div>
+
+  <!-- Sök + sort -->
+  <form id="searchForm" class="row">
+    <input
+            id="query"
+            type="search"
+            placeholder="Sök film eller person..."
+            aria-label="Sök"
+    />
+
+    <select id="searchType" aria-label="Söktyp">
+      <option value="movie">Film</option>
+      <option value="person">Person</option>
+    </select>
+
+    <button type="submit">Sök</button>
+
+    <select id="sort" aria-label="Sortering">
+      <option value="title_asc">A → Ö</option>
+      <option value="title_desc">Ö → A</option>
+      <option value="score_asc">Score / Popularity ↑</option>
+      <option value="score_desc">Score / Popularity ↓</option>
+    </select>
+  </form>
+
+  <p id="message" class="message" role="status" aria-live="polite"></p>
+  <p id="error" class="error" role="alert" aria-live="assertive"></p>
+</header>
+
+<main class="wrap">
+  <section id="results" class="grid" aria-label="Resultat"></section>
+</main>
+
+<script type="module" src="./main.js"></script>
+
+</body>
+</html>
