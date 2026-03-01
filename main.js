@@ -60,7 +60,7 @@ async function loadList(endpoint, loadingText) {
         currentKind = "movie";
         currentMode = "list";
         showOverview = false;
-        currentItems = (data.results || []).slice(0, 10);
+        currentItems = (data.results || []).slice(0, 25);
 
         setStatus();
         if (currentItems.length === 0) setStatus({ error: "Inga filmer hittades." });
@@ -86,7 +86,7 @@ async function doSearch() {
             const data = await tmdb("/search/movie", { query: q, page: 1, include_adult: false });
             currentKind = "movie";
             currentMode = "search";
-            showOverview = true;          // film-sök ska visa beskrivning
+            showOverview = true;
             currentItems = data.results || [];
         } else {
             const data = await tmdb("/search/person", { query: q, page: 1, include_adult: false });

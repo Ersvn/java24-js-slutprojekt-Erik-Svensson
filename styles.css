@@ -12,6 +12,7 @@ input, select, button {
 
 input[type="search"] { flex: 1 1 240px; min-width: 240px; }
 
+
 .message { margin: 6px 0 0; color: #555; min-height: 1.2em; }
 .error { margin: 6px 0 0; color: #b00020; min-height: 1.2em; }
 

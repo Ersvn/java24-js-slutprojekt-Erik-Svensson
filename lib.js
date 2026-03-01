@@ -113,4 +113,5 @@ export function renderResults({ items, kind, showOverview, sortKey, resultsEl })
       </article>
     `;
     }).join("");
+
 }
