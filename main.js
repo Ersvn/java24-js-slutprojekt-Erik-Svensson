@@ -127,3 +127,7 @@ sortEl.addEventListener("change", () => {
 });
 
 showHome();
+
+// 1. Vad har varit roligast med projektet?
+// 2. Vad har varit svårast med koden? Var specifik och visa i koden hur du löste det.
+// 3. Om du skulle utveckla ett liknande projekt igen, vad skulle du göra annorlunda i processen?
