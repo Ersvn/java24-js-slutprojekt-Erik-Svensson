@@ -90,11 +90,13 @@ export function renderResults({ items, kind, showOverview, sortKey, resultsEl })
         const knownFor = Array.isArray(x.known_for) ? x.known_for : [];
 
         const knownList = knownFor.length
-            ? knownFor.map((k) => {
-                const type = k.media_type === "movie" ? "Movie" : "TV";
+            ? `<div class="known-list">
+      ${knownFor.map((k) => {
+                const mt = k.media_type === "tv" ? "TV" : "Movie";
                 const t = k.title || k.name || "Okänd titel";
-                return `<div><span class="badge">${type}</span>${escapeHtml(t)}</div>`;
-            }).join("")
+                return `<div><span class="badge">${mt}</span>${escapeHtml(t)}</div>`;
+            }).join("")}
+     </div>`
             : `<div class="meta">Inget att visa.</div>`;
 
         return `
