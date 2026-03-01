@@ -4,6 +4,7 @@ const TMDB_BASE = "https://api.themoviedb.org/3";
 const IMG_BASE = "https://image.tmdb.org/t/p/w342";
 const FALLBACK_IMG = "https://via.placeholder.com/342x513?text=No+Image";
 
+// Hämtar tmdb data
 export async function tmdb(path, params = {}) {
     const url = new URL(TMDB_BASE + path);
     url.searchParams.set("api_key", TMDB_API_KEY);
@@ -46,6 +47,7 @@ function dateOfMovie(m) {
     return String(m.release_date || "Okänt datum");
 }
 
+// Tar lista och returnerar ny lista
 export function sortedItems(items, kind, sortKey) {
     const arr = [...items];
 
@@ -54,7 +56,7 @@ export function sortedItems(items, kind, sortKey) {
             titleOf(b, kind).toLocaleLowerCase("sv-SE"),
             "sv-SE"
         );
-
+// Numerisk sortering
     const byScore = (a, b) => scoreOf(a, kind) - scoreOf(b, kind);
 
     if (sortKey === "title_asc") return arr.sort(byTitle);

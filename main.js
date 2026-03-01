@@ -18,7 +18,7 @@ let currentMode = "home";
 let currentItems = [];
 let showOverview = false;
 
-//--Statusfunktion--//
+// Statusfunktion
 function setStatus({ message = "", error = "" } = {}) {
     messageEl.textContent = message;
     errorEl.textContent = error;
@@ -106,7 +106,7 @@ async function doSearch() {
     }
 }
 
-//--Events--//
+// Events
 homeBtn.addEventListener("click", showHome);
 
 topRatedBtn.addEventListener("click", () =>
